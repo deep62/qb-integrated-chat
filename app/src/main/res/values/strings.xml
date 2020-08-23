@@ -157,5 +157,6 @@
     <string name="error_forwarding_not_connected">Unable to forward message. Not Connected to Chat</string>
     <string name="error_attachment_count">You can send 1 attachment per message</string>
     <string name="error_logout">Unable to Logout: </string>
+    <string name="title_activity_call">CallActivity</string>
 
 </resources>

@@ -63,7 +63,7 @@ public class SplashActivity extends BaseActivity {
             finish();
         } else {
             QBUser currentUser = getUserFromSession();
-            if (currentUser == null) {
+            if (/*currentUser == null*/true) {
                 LoginActivity.start(this);
                 finish();
             } else {

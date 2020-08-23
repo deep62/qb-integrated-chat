@@ -302,6 +302,7 @@ public class ChatActivity extends BaseActivity implements OnImagePickedListener,
         MenuItem menuItemInfo = menu.findItem(R.id.menu_chat_action_info);
         MenuItem menuItemLeave = menu.findItem(R.id.menu_chat_action_leave);
         MenuItem menuItemDelete = menu.findItem(R.id.menu_chat_action_delete);
+        MenuItem menuItemVideoChat = menu.findItem(R.id.start_video_call);
 
         switch (qbChatDialog.getType()) {
             case GROUP:
@@ -336,6 +337,11 @@ public class ChatActivity extends BaseActivity implements OnImagePickedListener,
                 deleteChat();
                 return true;
 
+            case R.id.start_video_call:
+                startCall();
+                return true;
+
+
             case android.R.id.home:
                 onBackPressed();
                 return true;
@@ -343,6 +349,11 @@ public class ChatActivity extends BaseActivity implements OnImagePickedListener,
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void startCall() {
+        Intent i = new Intent(this,CallActivity.class);
+        startActivity(i);
     }
 
     private void showPopupMenu(boolean isIncomingMessageClicked, View view, final QBChatMessage chatMessage) {
